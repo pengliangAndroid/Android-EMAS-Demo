@@ -20,7 +20,7 @@ public class LandingActivity extends BaseActivity {
         hideBack();
         showScan();
 
-        Toast.makeText(this,"新版本",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"New新版本",Toast.LENGTH_SHORT).show();
 
         findViewById(R.id.btn_native).setOnClickListener(new View.OnClickListener() {
             @Override
