@@ -2,13 +2,11 @@ package com.taobao.demo;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.emas.demo.poc.light.R;
-import com.taobao.demo.webview.WebViewSampleActivity;
-
 import com.taobao.demo.weex.WeexActivity;
 
 public class LandingActivity extends BaseActivity {
@@ -21,6 +19,8 @@ public class LandingActivity extends BaseActivity {
         setActionBarTitle(R.string.title);
         hideBack();
         showScan();
+
+        Toast.makeText(this,"新版本",Toast.LENGTH_SHORT).show();
 
         findViewById(R.id.btn_native).setOnClickListener(new View.OnClickListener() {
             @Override
