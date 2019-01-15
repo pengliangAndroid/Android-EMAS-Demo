@@ -16,7 +16,7 @@ public class DemoApplication extends Application {
     public void onCreate() {
         super.onCreate();
         Log.e("APP", "DemoApplication on create");
-        //Utils.initConfig(this);
+        Utils.initConfig(this);
         mContext = this;
         //支持读取本地配置
         EmasInit emas = EmasInit.getInstance();

@@ -1,5 +1,5 @@
-def emas_version_name = getEnvValue('EMAS_VERSION_NAME', "1.0")
-def emas_version_code = getEnvValue('EMAS_VERSION_CODE', "1")
+def emas_version_name = getEnvValue('EMAS_VERSION_NAME', "1.0.1")
+def emas_version_code = getEnvValue('EMAS_VERSION_CODE', "2")
 def emas_base_version = getEnvValue('EMAS_BASE_VERSION', "1")
 //设置渠道包
 def emas_channel_list = getEnvValue("EMAS_CHANNEL_LIST","")
