@@ -15,14 +15,14 @@ public class LandingActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing);
-        Toast.makeText(this,"New新版本",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"New新版本New新版本",Toast.LENGTH_SHORT).show();
 
 
         setCustomActionBar();
         setActionBarTitle(R.string.title);
         hideBack();
         showScan();
-        Toast.makeText(this,"New新版本",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"New新版本New新版本",Toast.LENGTH_SHORT).show();
 
         findViewById(R.id.btn_native).setOnClickListener(new View.OnClickListener() {
             @Override
