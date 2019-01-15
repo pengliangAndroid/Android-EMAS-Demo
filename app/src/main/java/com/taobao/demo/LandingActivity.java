@@ -15,7 +15,7 @@ public class LandingActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing);
-        Toast.makeText(this,"新版本",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"NewNew新版本",Toast.LENGTH_SHORT).show();
 
 
         setCustomActionBar();
