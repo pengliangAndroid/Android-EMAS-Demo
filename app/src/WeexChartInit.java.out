@@ -1,0 +1,11 @@
+package com.taobao.demo;
+
+import android.content.Context;
+
+import com.alibaba.weex.plugin.loader.WeexPluginContainer;
+
+public class WeexChartInit {
+    public static void init(Context context) {
+        WeexPluginContainer.loadAll(context.getApplicationContext());
+    }
+}

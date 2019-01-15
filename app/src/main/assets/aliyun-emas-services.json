@@ -1,0 +1,29 @@
+{
+  "private_cloud_config": {
+    "AppKey": "20000666",
+    "Network": {
+      "IPStrategy": {}
+    },
+    "ZCache": {
+      "URL": "http://cdn.emas-poc.com/eweex/"
+    },
+    "HA": {
+      "RSAPublicKey": "",
+      "OSSBucketName": "emas-poc-private",
+      "UniversalHost": "adash.emas-poc.com"
+    },
+    "AppSecret": "d7ba304a1decf21395b04cf26e8d3dc3",
+    "ChannelID": "1001@DemoApp_Android_1.0",
+    "ACCS": {
+      "Domain": "accs.emas-poc.com"
+    },
+    "MTOP": {
+      "Domain": "aserver.emas-poc.com"
+    },
+    "RemoteConfig": {
+      "Domain": "aserver.emas-poc.com"
+    },
+    "UseHTTP": "true",
+    "StartActivity": "com.taobao.demo.WelcomActivity"
+  }
+}
