@@ -9,6 +9,8 @@ import android.widget.Toast;
 import com.emas.demo.poc.light.R;
 import com.taobao.demo.weex.WeexActivity;
 
+import java.lang.reflect.Method;
+
 public class LandingActivity extends BaseActivity {
 
     @Override
@@ -24,14 +26,18 @@ public class LandingActivity extends BaseActivity {
         showScan();
         //Toast.makeText(this,"New新版本New新版本",Toast.LENGTH_SHORT).show();
 
-        Class<?> name = null;
+        Class<?> clazz = null;
         try {
-            name = Class.forName("test.android.taobao.com.firstlib");
-        } catch (ClassNotFoundException e) {
+            clazz = Class.forName("test.android.taobao.com.firstlib.TestUtil");
+            if(clazz != null){
+                //Object instance = clazz.newInstance();
+                Method method = clazz.getDeclaredMethod("getData",null);
+                Object retVal = method.invoke(null, null);
+                Toast.makeText(this,"模块调用返回值:" + retVal,Toast.LENGTH_SHORT).show();
+            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        boolean flag = (name == null);
-        Toast.makeText(this,"模块是否集成:" + flag,Toast.LENGTH_SHORT).show();
 
         findViewById(R.id.btn_native).setOnClickListener(new View.OnClickListener() {
             @Override
