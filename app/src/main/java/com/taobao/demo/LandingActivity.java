@@ -8,7 +8,6 @@ import android.widget.Toast;
 
 import com.emas.demo.poc.light.R;
 import com.taobao.demo.weex.WeexActivity;
-import com.taobao.weex.devtools.common.ReflectionUtil;
 
 public class LandingActivity extends BaseActivity {
 
@@ -25,7 +24,12 @@ public class LandingActivity extends BaseActivity {
         showScan();
         //Toast.makeText(this,"New新版本New新版本",Toast.LENGTH_SHORT).show();
 
-        Class<?> name = ReflectionUtil.tryGetClassForName("test.android.taobao.com.firstlib");
+        Class<?> name = null;
+        try {
+            name = Class.forName("test.android.taobao.com.firstlib");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
         boolean flag = (name == null);
         Toast.makeText(this,"模块是否集成:" + flag,Toast.LENGTH_SHORT).show();
 
