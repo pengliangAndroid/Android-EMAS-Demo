@@ -118,7 +118,6 @@ dependencies {
         //exclude group:'com.taobao.android', module:'tlog_uploader_oss'
     }
 
-    compile ('com.taobao.android.test:PPFirstBundle-release:1.0-SNAPSHOT')
 
     //compile ('com.taobao.android:tlog_uploader_ceph:1.1.0.7-open@aar')
     //默认oss通道需要依赖oss的三方库
