@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.emas.demo.poc.light.R;
 import com.taobao.demo.weex.WeexActivity;
+import com.taobao.weex.devtools.common.ReflectionUtil;
 
 public class LandingActivity extends BaseActivity {
 
@@ -22,6 +24,10 @@ public class LandingActivity extends BaseActivity {
         hideBack();
         showScan();
         //Toast.makeText(this,"New新版本New新版本",Toast.LENGTH_SHORT).show();
+
+        Class<?> name = ReflectionUtil.tryGetClassForName("test.android.taobao.com.firstlib");
+        boolean flag = (name == null);
+        Toast.makeText(this,"模块是否集成:" + flag,Toast.LENGTH_SHORT).show();
 
         findViewById(R.id.btn_native).setOnClickListener(new View.OnClickListener() {
             @Override
