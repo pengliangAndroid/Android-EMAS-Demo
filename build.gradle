@@ -3,7 +3,6 @@ buildscript {
     repositories {
         google()
         jcenter()
-        maven {url CUSTOM_REPOSITORY_HOST + "/repository/maven-public/"}
         maven {url SDK_REPOSITORY_URL
             credentials {
                 username = SDK_REPOSITORY_USERNAME
@@ -27,14 +26,13 @@ allprojects {
         google()
         jcenter()
 
-        maven {url CUSTOM_REPOSITORY_HOST + "/repository/maven-public/"}
         maven {url SDK_REPOSITORY_URL
             credentials {
                 username = SDK_REPOSITORY_USERNAME
                 password = SDK_REPOSITORY_PASSWORD
             }
         }
-
+        maven {url CUSTOM_REPOSITORY_HOST + "/repository/maven-public/"}
         maven {url WEEX_PUBLIC_REPOSITORY_URL
             credentials {
                 username = WEEX_REPOSITORY_USERNAME
