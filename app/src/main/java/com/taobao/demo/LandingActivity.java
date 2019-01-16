@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import com.emas.demo.poc.light.R;
 import com.taobao.demo.weex.WeexActivity;
@@ -15,14 +14,14 @@ public class LandingActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing);
-        Toast.makeText(this,"New新版本New新版本",Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this,"New新版本New新版本",Toast.LENGTH_SHORT).show();
 
 
         setCustomActionBar();
         setActionBarTitle(R.string.title);
         hideBack();
         showScan();
-        Toast.makeText(this,"New新版本New新版本",Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this,"New新版本New新版本",Toast.LENGTH_SHORT).show();
 
         findViewById(R.id.btn_native).setOnClickListener(new View.OnClickListener() {
             @Override
