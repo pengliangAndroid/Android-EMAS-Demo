@@ -102,6 +102,8 @@ dependencies {
     compile('com.taobao.android:utdid4all:1.1.5.3_proguard@jar') { transitive true }
     /************基础库 END**********/
 
+
+
     /************UPDATE START**********/
     compile('com.taobao.android:update-datasource:1.0.2-open@jar') { transitive false }
     compile('com.taobao.android:update-common:1.0.2-open@aar') { transitive false }
@@ -117,8 +119,11 @@ dependencies {
         transitive true
         //exclude group:'com.taobao.android', module:'tlog_uploader_oss'
     }
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'io.reactivex.rxjava2:rxjava:2.1.5'
 
-
+//    compile('com.taobao.android.test:PPFirstBundle:1.0.1')
     //compile ('com.taobao.android:tlog_uploader_ceph:1.1.0.7-open@aar')
     //默认oss通道需要依赖oss的三方库
     compile('com.squareup.okhttp3:okhttp:3.4.1@jar')

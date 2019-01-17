@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.emas.demo.poc.light.R;
-import com.taobao.demo.weex.WeexActivity;
+import com.taobao.demo.weex.custom.WXPageActivity;
 
 import java.lang.reflect.Method;
 
@@ -49,8 +49,8 @@ public class LandingActivity extends BaseActivity {
         findViewById(R.id.btn_weex).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LandingActivity.this, WeexActivity.class);
-                intent.setData(Uri.parse("http://cdn.emas-poc.com/material/yanpeicpf/index.html?_wx_tpl=http://cdn.emas-poc.com/app/yanpeicpf-bbb/pages/index/entry.js"));
+                Intent intent = new Intent(LandingActivity.this, WXPageActivity.class);
+                //intent.setData(Uri.parse("http://cdn.emas-poc.com/material/yanpeicpf/index.html?_wx_tpl=http://cdn.emas-poc.com/app/yanpeicpf-bbb/pages/index/entry.js"));
                 startActivity(intent);
             }
         });

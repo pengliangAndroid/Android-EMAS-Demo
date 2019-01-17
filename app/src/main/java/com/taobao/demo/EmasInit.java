@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.res.Resources;
 import android.os.Build;
+import android.os.StrictMode;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -15,10 +16,8 @@ import com.alibaba.ha.adapter.AliHaAdapter;
 import com.alibaba.ha.adapter.AliHaConfig;
 import com.alibaba.ha.adapter.Plugin;
 import com.alibaba.ha.adapter.Sampling;
+import com.alibaba.weex.plugin.loader.WeexPluginContainer;
 import com.emas.demo.poc.light.BuildConfig;
-import com.emas.weex.EmasWeex;
-import com.facebook.drawee.backends.pipeline.Fresco;
-import com.facebook.imagepipeline.core.ImagePipelineConfig;
 import com.taobao.accs.ACCSClient;
 import com.taobao.accs.ACCSManager;
 import com.taobao.accs.AccsClientConfig;
@@ -30,8 +29,9 @@ import com.taobao.agoo.IRegister;
 import com.taobao.agoo.TaobaoRegister;
 import com.taobao.demo.agoo.AgooActivity;
 import com.taobao.demo.orange.BaseBFgroundSwitch;
-import com.taobao.demo.weex.module.TestHaModule;
 import com.taobao.demo.weex.WeexCrashListener;
+import com.taobao.demo.weex.custom.extend.ImageAdapter;
+import com.taobao.demo.weex.custom.util.AppConfig;
 import com.taobao.demo.weex.module.EmasNavigatorModule;
 import com.taobao.orange.OConfig;
 import com.taobao.orange.OrangeConfig;
@@ -42,9 +42,9 @@ import com.taobao.update.apk.ApkUpdater;
 import com.taobao.update.common.Config;
 import com.taobao.update.common.framework.UpdateRuntime;
 import com.taobao.update.datasource.UpdateDataSource;
+import com.taobao.weex.InitConfig;
 import com.taobao.weex.WXSDKEngine;
 import com.taobao.weex.common.WXException;
-
 
 import org.android.agoo.huawei.HuaWeiRegister;
 import org.android.agoo.mezu.MeizuRegister;
@@ -217,7 +217,7 @@ public class EmasInit {
     /********************WEEX SDK START **************************/
     public void initWeex() {
         try {
-            ImagePipelineConfig imageConfig = ImagePipelineConfig.newBuilder(mApplication)
+            /*ImagePipelineConfig imageConfig = ImagePipelineConfig.newBuilder(mApplication)
                     .setDownsampleEnabled(true)
                     .build();
             Fresco.initialize(mApplication, imageConfig);
@@ -228,7 +228,23 @@ public class EmasInit {
                     .setZcacheUrl(mCacheURL).build();
             EmasWeex.getInstance().init(mApplication, econfig);
             WXSDKEngine.registerModule("navigator", EmasNavigatorModule.class);
-            WXSDKEngine.registerModule("haTest", TestHaModule.class);
+            WXSDKEngine.registerModule("haTest", TestHaModule.class);*/
+
+            WXSDKEngine.addCustomOptions("appName", "WXSample");
+            WXSDKEngine.addCustomOptions("appGroup", "WXApp");
+            WXSDKEngine.initialize(mApplication,
+                    new InitConfig.Builder().setImgAdapter(new ImageAdapter()).build()
+            );
+                WXSDKEngine.registerModule("navigator", com.taobao.demo.weex.custom.extend.EmasNavigatorModule.class);
+                WXSDKEngine.registerModule("event", com.taobao.demo.weex.custom.extend.WXEventModule.class);
+            AppConfig.init(mApplication);
+            WeexPluginContainer.loadAll(mApplication);
+
+            if (Build.VERSION.SDK_INT>=18) {
+                StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+                StrictMode.setVmPolicy(builder.build());
+                builder.detectFileUriExposure();
+            }
         } catch (WXException var6) {
             var6.printStackTrace();
         }
