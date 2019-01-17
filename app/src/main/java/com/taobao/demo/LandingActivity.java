@@ -24,7 +24,7 @@ public class LandingActivity extends BaseActivity {
         setActionBarTitle(R.string.title);
         hideBack();
         showScan();
-        //Toast.makeText(this,"New新版本New新版本",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"New新版本New新版本",Toast.LENGTH_SHORT).show();
 
         Class<?> clazz = null;
         try {
